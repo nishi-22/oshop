@@ -23,12 +23,12 @@ import {AuthGuardService} from './auth-guard.service';
    { path: '', component: HomeComponent },
    { path: 'products ', component: ProductsComponent },
    { path: 'shopping-cart', component: ShoppingCartComponent },
+   { path: 'login', component: LoginComponent },
    { path: 'check-out', component: CheckOutComponent , canActivate: [AuthGuardService] },
    { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuardService]  },
-   { path: 'my-orders', component: MyOrdersComponent },
-   { path: 'login', component: LoginComponent },
-   { path: 'admin/products', component: AdminProductsComponent },
-   { path: 'admin/orders', component: AdminOrdersComponent }
+   { path: 'my-orders', component: MyOrdersComponent , canActivate: [AuthGuardService]},
+   { path: 'admin/products', component: AdminProductsComponent , canActivate: [AuthGuardService]},
+   { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuardService] }
  ];
 @NgModule({
   declarations: [
