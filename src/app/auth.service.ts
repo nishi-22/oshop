@@ -30,7 +30,7 @@ export class AuthService {
 
   get appUser$(): Observable<AppUser> {
     return this.user$
-      .pipe(switchMap(user => this.userService.get(user.uid)))
+      .pipe(switchMap(user => this.userService.get(user.uid)));
   }
 
 
