@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {Observable} from 'rxjs';
+import {Observable, empty} from 'rxjs';
 import * as firebase from 'firebase';
 import {ActivatedRoute} from '@angular/router';
 import {AppUser} from './models/app-user';
@@ -26,11 +26,16 @@ export class AuthService {
 
   logout() {
     this.afAuth.auth.signOut();
-  }
+    }
 
   get appUser$(): Observable<AppUser> {
+    console.log(this.user$);
     return this.user$
-      .pipe(switchMap(user => this.userService.get(user.uid)));
+      .pipe(switchMap((user) => {
+        console.log(user)
+        if (user) {return this.userService.get(user.uid)};
+        return empty();
+      }));
   }
 
 

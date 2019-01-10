@@ -1,3 +1,14 @@
-<p>
-  products works!
-</p>
+<div class="row">
+  <div class="col-3">
+   <product-filter [category]="category"></product-filter>
+  </div>
+  <div class="col">
+   <div class="row" *ngIf="filteredProducts" >
+    <ng-container *ngFor="let prod1 of filteredProducts; let i = index">
+      <div class="col-4">
+        <product-card *ngIf="prod1" [product]="prod1"></product-card>
+      </div>
+    </ng-container>
+</div>
+  </div>
+</div>

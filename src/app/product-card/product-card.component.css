@@ -1,0 +1,11 @@
+.product-image {
+  width: 300px; /*set the width or max-width*/
+  height: auto;
+}
+
+.card{
+  margin-bottom: 30px;
+}
+.card-footer{
+  padding: 0;
+}
