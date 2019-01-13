@@ -15,12 +15,14 @@ export class AppComponent {
       if (!user) return;
 
       userService.save(user);
-        const returnUrl = localStorage.getItem('returnUrl');
-        if (!returnUrl) return;
+      const returnUrl = localStorage.getItem('returnUrl');
+      if (!returnUrl) return;
 
-        localStorage.removeItem(returnUrl);
-        router.navigateByUrl(returnUrl);
-      });
+      localStorage.removeItem('returnUrl');
+      router.navigateByUrl(returnUrl);
+    });
 
   }
+
+
    }

@@ -25,19 +25,22 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem('cartId');
     this.afAuth.auth.signOut();
-    }
+  }
 
   get appUser$(): Observable<AppUser> {
-    console.log(this.user$);
     return this.user$
       .pipe(switchMap((user) => {
-        console.log(user)
-        if (user) {return this.userService.get(user.uid)};
+        if (user) {
+          return this.userService.get(user.uid);
+        }
         return empty();
       }));
   }
 
 
-
 }
+
+
+
