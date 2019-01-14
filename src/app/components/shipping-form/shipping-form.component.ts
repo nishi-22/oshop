@@ -1,9 +1,9 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Order} from '../components/check-out/order';
-import {OrderService} from '../order.service';
-import {AuthService} from '../auth.service';
+import {Order} from '../check-out/order';
+import {OrderService} from '../../services/order/order.service';
 import {Router} from '@angular/router';
-import {ShoppingCart} from '../models/shopping-cart';
+import {ShoppingCart} from '../../models/shopping-cart';
+import {AuthService} from '../../services/auth/auth.service';
 
 @Component({
   selector: 'shipping-form',

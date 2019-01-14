@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {AuthService} from '../../auth.service';
+import {AuthService} from '../../services/auth/auth.service';
 import {AppUser} from '../../models/app-user';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {ShoppingCartService} from '../../shopping-cart.service';
+import {ShoppingCartService} from '../../services/shopping-cart/shopping-cart.service';
 import {Observable} from 'rxjs';
 import {ShoppingCart} from '../../models/shopping-cart';
 
